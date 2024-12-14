@@ -5,6 +5,7 @@ import Navbar from './components/Navbar';
 import MainContent from './components/MainContent';
 import AboutPage from './pages/AboutPage';
 import HelpPage from './pages/HelpPage';
+import GoalsPage from './pages/Goals';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Route path="/" element={<MainContent />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/help" element={<HelpPage />} />
+          <Route path="goals" element={<GoalsPage />} />
         </Routes>
       </div>
     </BrowserRouter>
