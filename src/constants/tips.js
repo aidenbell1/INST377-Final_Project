@@ -20,22 +20,22 @@ export const DAILY_TIPS = [
       category: "sustainability"
     },
     {
-      id: 3,
+      id: 5,
       tip: "Unplug devices when they are not in use",
       category: "energy"
     },
     {
-      id: 4,
+      id: 6,
       tip: "Bring your own reusable bags when shopping",
       category: "sustainability"
     },
     {
-      id: 5,
+      id: 7,
       tip: "Plant a tree to improve air quality",
       category: "environment"
     },
     {
-      id: 6,
+      id: 8,
       tip: "Take shorter showers to save water",
       category: "water"
     }
