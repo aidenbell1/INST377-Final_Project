@@ -9,6 +9,35 @@ export const DAILY_TIPS = [
       tip: "Turn off lights when leaving a room",
       category: "energy"
     },
-    // Add more tips...
+    {
+      id: 3,
+      tip: "Recycle paper, plastic, and glass",
+      category: "waste"
+    },
+    {
+      id: 4,
+      tip: "Use reusable water bottles instead of plastic ones",
+      category: "sustainability"
+    },
+    {
+      id: 3,
+      tip: "Unplug devices when they are not in use",
+      category: "energy"
+    },
+    {
+      id: 4,
+      tip: "Bring your own reusable bags when shopping",
+      category: "sustainability"
+    },
+    {
+      id: 5,
+      tip: "Plant a tree to improve air quality",
+      category: "environment"
+    },
+    {
+      id: 6,
+      tip: "Take shorter showers to save water",
+      category: "water"
+    }
   ];
   
