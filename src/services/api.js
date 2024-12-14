@@ -1,6 +1,5 @@
 import { API_CONFIG } from './config';
 
-// Update the response handler to match the API response structure
 const handleResponse = async (response) => {
   if (!response.ok) {
     const error = await response.json();
