@@ -2,6 +2,7 @@
   "name": "inst377-final_project",
   "version": "0.1.0",
   "private": true,
+  "homepage": "./INST377-Final_Project/frontend/public/index.html",
   "dependencies": {
     "@fortawesome/free-solid-svg-icons": "^6.7.1",
     "@fortawesome/react-fontawesome": "^0.2.2",
@@ -37,5 +38,10 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "description": "Here is the entire codebase for our semester final project.",
+  "main": "index.js",
+  "devDependencies": {},
+  "author": "",
+  "license": "ISC"
 }
