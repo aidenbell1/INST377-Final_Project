@@ -1,9 +1,15 @@
 const express = require('express');
 const axios = require('axios');
+const { createClient } = require('@supabase/supabase-js');
+require('dotenv').config();
+
 const app = express();
 app.use(express.json());
 
 const API_KEY = '0Jv21mL2kWlABQGSiXdVGA';
+
+// Supabase configuration
+const supabase = createClient(process.env.SUPABASE_URL, process.env.SUPABASE_SERVICE_ROLE_KEY);
 
 // Electricity Estimate
 app.post('/api/electricity', async (req, res) => {
@@ -24,6 +30,15 @@ app.post('/api/electricity', async (req, res) => {
                 }
             }
         );
+
+        // Save data to Supabase
+        await supabase.from('logs').insert([
+            {
+                type: 'electricity',
+                details: response.data,
+            },
+        ]);
+
         res.json(response.data);
     } catch (error) {
         res.status(500).json({ error: error.message });
@@ -47,6 +62,15 @@ app.post('/api/flight', async (req, res) => {
                 }
             }
         );
+
+        // Save data to Supabase
+        await supabase.from('logs').insert([
+            {
+                type: 'flight',
+                details: response.data,
+            },
+        ]);
+
         res.json(response.data);
     } catch (error) {
         res.status(500).json({ error: error.message });
@@ -73,6 +97,15 @@ app.post('/api/shipping', async (req, res) => {
                 }
             }
         );
+
+        // Save data to Supabase
+        await supabase.from('logs').insert([
+            {
+                type: 'shipping',
+                details: response.data,
+            },
+        ]);
+
         res.json(response.data);
     } catch (error) {
         res.status(500).json({ error: error.message });
@@ -97,7 +130,27 @@ app.post('/api/vehicle', async (req, res) => {
                 }
             }
         );
+
+        // Save data to Supabase
+        await supabase.from('logs').insert([
+            {
+                type: 'vehicle',
+                details: response.data,
+            },
+        ]);
+
         res.json(response.data);
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
+});
+
+// Retrieve Logs from Supabase
+app.get('/api/logs', async (req, res) => {
+    try {
+        const { data, error } = await supabase.from('logs').select('*');
+        if (error) throw error;
+        res.status(200).json(data);
     } catch (error) {
         res.status(500).json({ error: error.message });
     }
