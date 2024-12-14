@@ -1,4 +1,7 @@
-# Getting Started with Create React App
+# INST377-Final_Project
+Here is the entire codebase for our semester final project.
+
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
