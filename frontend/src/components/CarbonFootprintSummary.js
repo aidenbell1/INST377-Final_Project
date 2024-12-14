@@ -1,13 +1,30 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import { useCarbon } from '../hooks/useCarbon';
+import EmissionsCalculator from './EmissionsCalculator';
 
 function CarbonFootprintSummary() {
-  // Placeholder data for now, will be replaced with API data
-  const emissionsData = {
-    daily: 5.2,
-    transport: 2.3,
-    energy: 1.8,
-    food: 1.1
-  };
+  const [totalEmissions, setTotalEmissions] = useState(0);
+  const { calculateEstimate } = useCarbon();
+
+  useEffect(() => {
+    // Calculating initial emissions example
+    const calculateInitialEmissions = async () => {
+      try {
+        const electricityData = {
+          electricity_unit: 'kwh',
+          electricity_value: 100,
+          country: 'us',
+          state: 'ca'
+        };
+        const result = await calculateEstimate('electricity', electricityData);
+        setTotalEmissions(result.carbon_kg);
+      } catch (err) {
+        console.error('Error calculating initial emissions:', err);
+      }
+    };
+
+    calculateInitialEmissions();
+  }, [calculateEstimate]);
 
   return (
     <section className="carbon-summary">
@@ -15,22 +32,9 @@ function CarbonFootprintSummary() {
       <div className="emissions-display">
         <div className="total-emissions">
           <h3>Today's Total</h3>
-          <p className="emission-value">{emissionsData.daily} kg CO2e</p>
+          <p className="emission-value">{totalEmissions.toFixed(2)} kg CO2e</p>
         </div>
-        <div className="emissions-breakdown">
-          <div className="emission-item">
-            <span>Transport</span>
-            <span>{emissionsData.transport} kg CO2e</span>
-          </div>
-          <div className="emission-item">
-            <span>Energy</span>
-            <span>{emissionsData.energy} kg CO2e</span>
-          </div>
-          <div className="emission-item">
-            <span>Food</span>
-            <span>{emissionsData.food} kg CO2e</span>
-          </div>
-        </div>
+        <EmissionsCalculator />
       </div>
     </section>
   );
