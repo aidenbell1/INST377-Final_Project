@@ -33,8 +33,12 @@ function ProgressGraphs() {
 
   return (
     <section className="progress-graphs">
-      <h2>Your Progress</h2>
+      <h2>Progress Graphs</h2>
       <Line data={data} options={options} />
+      <div className="saved-emissions">
+        <h3>Emissions Saved</h3>
+        <p>15 kg CO2e this week</p>
+      </div>
     </section>
   );
 }
