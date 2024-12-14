@@ -1,14 +1,15 @@
 import React, { useState } from 'react';
 import { useCarbon } from '../hooks/useCarbon';
 
-function EmissionsCalculator() {
+function EmissionsCalculator({ setTotalEmissions }) {
   const { calculateEstimate, loading, error } = useCarbon();
   const [results, setResults] = useState(null);
 
   const handleCalculation = async (type, data) => {
     try {
       const result = await calculateEstimate(type, data);
-      setResults(result);
+      setResults(result);  // Set the results for display
+      setTotalEmissions(result.carbon_kg);  // Update total emissions in the parent component
     } catch (err) {
       console.error(`Error calculating ${type}:`, err);
     }
