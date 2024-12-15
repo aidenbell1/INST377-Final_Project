@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useCarbon } from '../hooks/useCarbon';
+import './animations.css'; // Import CSS for blob animations
 
 function EmissionsCalculator({ setTotalEmissions }) {
   const { calculateEstimate, loading, error } = useCarbon();
@@ -8,8 +9,8 @@ function EmissionsCalculator({ setTotalEmissions }) {
   const handleCalculation = async (type, data) => {
     try {
       const result = await calculateEstimate(type, data);
-      setResults(result);  // Set the results for display
-      setTotalEmissions(result.carbon_kg);  // Update total emissions in the parent component
+      setResults(result); // Set results for display
+      setTotalEmissions(result.carbon_kg); // Update total emissions globally
     } catch (err) {
       console.error(`Error calculating ${type}:`, err);
     }
@@ -29,7 +30,9 @@ function EmissionsCalculator({ setTotalEmissions }) {
         </div>
       )}
       <div className="buttons">
+        {/* Blob Button for Calculate Electricity */}
         <button
+          className="blob-btn"
           onClick={() =>
             handleCalculation('electricity', {
               electricity_unit: 'kwh',
@@ -40,8 +43,19 @@ function EmissionsCalculator({ setTotalEmissions }) {
           }
         >
           Calculate Electricity
+          <span className="blob-btn__inner">
+            <span className="blob-btn__blobs">
+              <span className="blob-btn__blob"></span>
+              <span className="blob-btn__blob"></span>
+              <span className="blob-btn__blob"></span>
+              <span className="blob-btn__blob"></span>
+            </span>
+          </span>
         </button>
+
+        {/* Blob Button for Calculate Flight */}
         <button
+          className="blob-btn"
           onClick={() =>
             handleCalculation('flight', {
               passengers: 2,
@@ -53,8 +67,19 @@ function EmissionsCalculator({ setTotalEmissions }) {
           }
         >
           Calculate Flight
+          <span className="blob-btn__inner">
+            <span className="blob-btn__blobs">
+              <span className="blob-btn__blob"></span>
+              <span className="blob-btn__blob"></span>
+              <span className="blob-btn__blob"></span>
+              <span className="blob-btn__blob"></span>
+            </span>
+          </span>
         </button>
+
+        {/* Blob Button for Calculate Shipping */}
         <button
+          className="blob-btn"
           onClick={() =>
             handleCalculation('shipping', {
               weight_value: 100,
@@ -66,8 +91,19 @@ function EmissionsCalculator({ setTotalEmissions }) {
           }
         >
           Calculate Shipping
+          <span className="blob-btn__inner">
+            <span className="blob-btn__blobs">
+              <span className="blob-btn__blob"></span>
+              <span className="blob-btn__blob"></span>
+              <span className="blob-btn__blob"></span>
+              <span className="blob-btn__blob"></span>
+            </span>
+          </span>
         </button>
+
+        {/* Blob Button for Calculate Vehicle */}
         <button
+          className="blob-btn"
           onClick={() =>
             handleCalculation('vehicle', {
               distance_unit: 'mi',
@@ -77,8 +113,36 @@ function EmissionsCalculator({ setTotalEmissions }) {
           }
         >
           Calculate Vehicle
+          <span className="blob-btn__inner">
+            <span className="blob-btn__blobs">
+              <span className="blob-btn__blob"></span>
+              <span className="blob-btn__blob"></span>
+              <span className="blob-btn__blob"></span>
+              <span className="blob-btn__blob"></span>
+            </span>
+          </span>
         </button>
       </div>
+
+      {/* Include the SVG Filter for Gooey Effect */}
+      <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+        <defs>
+          <filter id="goo">
+            <feGaussianBlur
+              in="SourceGraphic"
+              result="blur"
+              stdDeviation="10"
+            ></feGaussianBlur>
+            <feColorMatrix
+              in="blur"
+              mode="matrix"
+              values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 21 -7"
+              result="goo"
+            ></feColorMatrix>
+            <feBlend in2="goo" in="SourceGraphic" result="mix"></feBlend>
+          </filter>
+        </defs>
+      </svg>
     </div>
   );
 }

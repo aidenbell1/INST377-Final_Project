@@ -1,0 +1,239 @@
+/* Animations.css: This file contains all the animations used in the project */
+/* Fade-in animation for page transitions */
+.fade-in-page {
+  animation: fadeIn 2s;
+  -webkit-animation: fadeIn 2s;
+  -moz-animation: fadeIn 2s;
+  -o-animation: fadeIn 2s;
+  -ms-animation: fadeIn 2s;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-moz-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-o-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-ms-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+
+/* Blob Button Animation for Calculators - Already implemented */
+
+/* Universal Reset */
+*, *:before, *:after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* General Body Styling */
+  body {
+    background: #ffffff; /* Dark background for contrast */
+    font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+  }
+  
+  /* Blob Button Styling */
+  .blob-btn {
+    position: relative;
+    display: inline-block;
+    padding: 15px 30px;
+    font-size: 16px;
+    font-weight: bold;
+    color: white; /* Ensure the text is visible */
+    background-color: #303c54; /* Default button color */
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    text-transform: uppercase;
+    overflow: hidden;
+    outline: none;
+    transition: color 0.3s ease, background-color 0.3s ease;
+  }
+  
+  .blob-btn:hover {
+    color: #303c54; /* Change text color on hover */
+    background-color: white; /* Invert background color on hover */
+  }
+  
+  /* Inner Container for Gooey Effect */
+  .blob-btn__inner {
+    z-index: -1;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: #ffffff; /* Gooey effect color */
+    border-radius: 30px;
+    overflow: hidden;
+  }
+  
+  /* Container for Blobs */
+  .blob-btn__blobs {
+    position: relative;
+    display: block;
+    height: 100%;
+    filter: url('#goo'); /* Gooey filter for the blobs */
+  }
+  
+  /* Individual Blob Styling */
+  .blob-btn__blob {
+    position: absolute;
+    top: 50%;
+    width: 25%;
+    height: 25%;
+    background: #303c54; /* Blob color */
+    border-radius: 100%;
+    transform: translate3d(0, 150%, 0) scale(1.4);
+    transition: transform 0.45s;
+  }
+  
+  .blob-btn__blob:nth-child(1) { left: 10%; transition-delay: 0s; }
+  .blob-btn__blob:nth-child(2) { left: 30%; transition-delay: 0.1s; }
+  .blob-btn__blob:nth-child(3) { left: 50%; transition-delay: 0.2s; }
+  .blob-btn__blob:nth-child(4) { left: 70%; transition-delay: 0.3s; }
+  
+  .blob-btn:hover .blob-btn__blob {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  
+  /* SVG Filter for Gooey Effect */
+  svg {
+    position: absolute;
+    width: 0;
+    height: 0;
+  }
+  
+  /* Navbar Button Animation */
+  .btn:link,
+.btn:visited {
+    text-transform: uppercase; /* Make text uppercase */
+    text-decoration: none; /* Remove underline */
+    padding: 15px 40px; /* Add padding for a button feel */
+    display: inline-block; /* Allow inline styling */
+    border-radius: 100px; /* Make buttons rounded */
+    transition: all 0.2s; /* Smooth transition for hover effects */
+    position: relative; /* Required for the animation effect */
+}
+
+/* Hover state: Make the button float and add shadow */
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Active state: Reduce floating effect and shadow */
+.btn:active {
+    transform: translateY(-1px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Flicker Button for NavBar - Already implemented */
+/* Flicker Button Base Styling */
+.flicker-btn:link,
+.flicker-btn:visited {
+    text-transform: uppercase; /* Make text uppercase */
+    text-decoration: none; /* Remove underline */
+    padding: 15px 40px; /* Add padding for a button feel */
+    display: inline-block; /* Allow inline styling */
+    border-radius: 100px; /* Make buttons rounded */
+    transition: all 0.2s; /* Smooth transition for hover effects */
+    position: relative; /* Required for animation effects */
+    background-color: #fff; /* White button background */
+    color: #777; /* Gray text color */
+}
+
+/* Hover state for Flicker Button */
+.flicker-btn:hover {
+    transform: translateY(-3px); /* Slight upward movement */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Add shadow */
+    color: #303c54; /* Change text color to blue */
+}
+
+/* Active state for Flicker Button */
+.flicker-btn:active {
+    transform: translateY(-1px); /* Subtle downward effect */
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); /* Reduce shadow */
+}
+
+/* Flicker Button Hover Effect */
+.flicker-btn::after {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 100px; /* Match button's roundness */
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1; /* Send the effect to the back */
+    transition: all 0.4s; /* Smooth scaling and fading */
+    background-color: #fff; /* Match button's white background */
+}
+
+/* Flicker Button Hover Transition */
+.flicker-btn:hover::after {
+    transform: scaleX(1.4) scaleY(1.6); /* Expand the hover background */
+    opacity: 0; /* Fade out */
+}
+
+/* Animated Flicker Button */
+.flicker-btn-animated {
+    animation: moveInBottom 5s ease-out; /* Smooth slide-in animation */
+    animation-fill-mode: backwards; /* Ensure animation stays in end state */
+}
+
+/* Keyframes for Flicker Animation */
+@keyframes moveInBottom {
+    0% {
+        opacity: 0;
+        transform: translateY(30px); /* Start slightly below */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0px); /* Slide into original position */
+    }
+}
+
+/* Text Box Styling for Reference */
+.text-box {
+    margin-left: 44vw;
+    margin-top: 42vh;
+}
