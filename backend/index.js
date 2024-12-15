@@ -156,6 +156,28 @@ app.get('/api/logs', async (req, res) => {
     }
 });
 
+// Insert Data Directly into Supabase
+app.post('/api/insert-log', async (req, res) => {
+    const { type, details } = req.body;
+
+    // Validate the input
+    if (!type || !details) {
+        return res.status(400).json({ error: 'Both type and details are required' });
+    }
+
+    try {
+        const { data, error } = await supabase
+            .from('logs')
+            .insert([{ type, details }]);
+
+        if (error) throw error;
+
+        res.status(200).json({ message: 'Data inserted successfully', data });
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
+});
+
 // Start the server
 const PORT = process.env.PORT || 4000;
 app.listen(PORT, () => {

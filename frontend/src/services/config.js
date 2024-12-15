@@ -1,8 +1,8 @@
 export const API_CONFIG = {
     BASE_URL: 'https://www.carboninterface.com/api/v1',
-    API_KEY: '0Jv21mL2kWlABQGSiXdVGA',
+    API_KEY: '0QoXIUIzAAZGdjiJBYpUyA',
     HEADERS: {
-      'Authorization': 'Bearer 0Jv21mL2kWlABQGSiXdVGA',
+      'Authorization': 'Bearer 0QoXIUIzAAZGdjiJBYpUyA',
       'Content-Type': 'application/json'
     }
   };  
