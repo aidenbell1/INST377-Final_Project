@@ -12,7 +12,7 @@ By tracking your carbon emissions in key areas like electricity usage, travel, a
 Our project has cross-browser capabilities. 
 
 # Vercel deployment link
-inst-377-final-project-theta.vercel.app 
+https://inst-377-final-project-theta.vercel.app 
 
 # Developer Manual
 First, install node.js. 
