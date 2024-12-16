@@ -1,73 +1,29 @@
 # INST377-Final_Project
 Here is the entire codebase for our semester final project.
 
-## Getting Started with Create React App
+Welcome to Carbon Tracker
+Our mission is to empower individuals to take control of their carbon footprint and make informed decisions about their environmental impact. Together, we can help create a sustainable future, one small change at a time.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Our Purpose
+Carbon Tracker is more than just a tool—it's a movement. We strive to provide users with the resources they need to reduce their carbon footprint through daily tracking, education, and actionable tips. Our goal is to inspire a global community dedicated to fighting climate change.
 
-## Available Scripts
+By tracking your carbon emissions in key areas like electricity usage, travel, and daily activities, we make it easy to understand where changes can be made. With data-backed insights, users can make better choices and contribute to a greener planet.
 
-In the project directory, you can run:
+Our project has cross-browser capabilities. 
 
-### `npm start`
+# Vercel deployment link
+https://inst-377-final-project-aidenbell1-aiden-bells-projects.vercel.app/
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+# Developer Manual
+First, install node.js. 
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Second, clone the repository: 
+git clone https://github.com/your-repository-url.git 
+cd your-project-folder
 
-### `npm test`
+Third, run npm install in the backend directory. This has a postinstall included that installs the frontend and builds the site. Run node index.js once you have built. 
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Fourth, navigate to http://localhost:4000/ to use the site. 
 
-### `npm run build`
+Alternatively, you can follow the link above to the vercel deployment of the application. 
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
