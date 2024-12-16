@@ -1,10 +1,10 @@
 # INST377-Final_Project
 Here is the entire codebase for our semester final project.
 
-Welcome to Carbon Tracker
+## Welcome to Carbon Tracker
 Our mission is to empower individuals to take control of their carbon footprint and make informed decisions about their environmental impact. Together, we can help create a sustainable future, one small change at a time.
 
-Our Purpose
+### Our Purpose
 Carbon Tracker is more than just a tool—it's a movement. We strive to provide users with the resources they need to reduce their carbon footprint through daily tracking, education, and actionable tips. Our goal is to inspire a global community dedicated to fighting climate change.
 
 By tracking your carbon emissions in key areas like electricity usage, travel, and daily activities, we make it easy to understand where changes can be made. With data-backed insights, users can make better choices and contribute to a greener planet.
