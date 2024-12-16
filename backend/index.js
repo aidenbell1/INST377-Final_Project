@@ -1,3 +1,4 @@
+const path = require('path');
 const express = require('express');
 const axios = require('axios');
 const { createClient } = require('@supabase/supabase-js');
@@ -10,6 +11,14 @@ const API_KEY = '0Jv21mL2kWlABQGSiXdVGA';
 
 // Supabase configuration
 const supabase = createClient(process.env.SUPABASE_URL, process.env.SUPABASE_SERVICE_ROLE_KEY);
+
+// Serve React frontend
+app.use(express.static(path.join(__dirname, '..', 'frontend', 'build')));
+
+// Fallback route for single-page app (React)
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, '..', 'frontend', 'build', 'index.html'));
+  });  
 
 // Electricity Estimate
 app.post('/api/electricity', async (req, res) => {
